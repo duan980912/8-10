@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common/swiper-4.1.6.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <header>
+            <input type="text" placeholder="搜索商品名称">
+        </header>
+        <section>
+            <div class="content">
+                <div class="nav">
+                    <div class="swiper-container top">
+                        <div class="swiper-wrapper" id="top"> </div>
+                    </div>
+                    <div class="swiper-containerr bottom">
+                        <div class="swiper-wrapper" id="bottom">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="imgBox">
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+</body>
+
+<script src="js/lib/handlebars-v4.0.11.js"></script>
+<script id="tpl" type="text/x-handlebars-template">
+    {{#each list}}
+    <div class="swiper-slide">
+        <p>{{@key}}</p>
+    </div>
+    {{/each}}
+</script>
+
+<script src="js/lib/handlebars-v4.0.11.js"></script>
+<script id="swiper" type="text/x-handlebars-template">
+    {{#each image}}
+    <div class="swiper-slide">
+        <img src="./images/{{src}}" alt="">
+        <p>{{price}}</p>
+    </div>
+    {{/each}}
+</script>
+
+
+<script src="js/lib/handlebars-v4.0.11.js"></script>
+<script id="list" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="img"><img src="{{src}}" alt=""></div>
+    {{/each}}
+</script>
+
+
+<script src="js/lib/require.js"></script>
+<script>
+    require(["./js/main.js"], function() {
+        require(["./js/app/index.js"])
+    })
+</script>
+
+</html>
